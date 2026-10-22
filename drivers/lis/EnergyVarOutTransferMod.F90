@@ -152,6 +152,14 @@ contains
     NoahmpIO%ALBSNOWDIRXY(I,1:NumSwRadBand,J) = noahmp%energy%state%AlbedoSnowDir(1:NumSwRadBand)
     NoahmpIO%ALBSNOWDIFXY(I,1:NumSwRadBand,J) = noahmp%energy%state%AlbedoSnowDif(1:NumSwRadBand)
 
+    !energy state variables needed for GEOS coupling
+    NoahmpIO%ZPDXY       (I,J) = noahmp%energy%state%ZeroPlaneDispSfc
+    NoahmpIO%USTARVEGXY  (I,J) = noahmp%energy%state%FrictionVelVeg
+    NoahmpIO%USTARBAREXY (I,J) = noahmp%energy%state%FrictionVelBare
+    NoahmpIO%TAUXXY      (I,J) = noahmp%energy%state%WindStressEwSfc
+    NoahmpIO%TAUYYXY     (I,J) = noahmp%energy%state%WindStressNsSfc
+    NoahmpIO%RHOAIRXY    (I,J) = noahmp%energy%state%DensityAirRefHeight 
+
     ! New Calculation of total Canopy/Stomatal Conductance Based on Bonan et al. (2011), Inverse of Canopy Resistance (below)
     LeafAreaIndSunlit      = max(noahmp%energy%state%LeafAreaIndSunlit, 0.0)
     LeafAreaIndShade       = max(noahmp%energy%state%LeafAreaIndShade, 0.0)
