@@ -279,6 +279,8 @@ module NoahmpIOVarType
     real(kind=kind_noahmp), allocatable, dimension(:,:)    ::  TAUXXY              ! Wind stress EW [N/m2]
     real(kind=kind_noahmp), allocatable, dimension(:,:)    ::  TAUYYXY             ! Wind stress NS [N/m2]
     real(kind=kind_noahmp), allocatable, dimension(:,:)    ::  RHOAIRXY            ! Air density ref height [kg/m3]
+    real(kind=kind_noahmp), allocatable, dimension(:,:,:)  ::  ALBSFCDIRXY         ! surface albedo, direct beam [-] (1=vis, 2=nir)
+    real(kind=kind_noahmp), allocatable, dimension(:,:,:)  ::  ALBSFCDIFXY         ! surface albedo, diffuse    [-] (1=vis, 2=nir)
 
     ! additional output variables
     real(kind=kind_noahmp), allocatable, dimension(:,:)    ::  PAHXY               ! precipitation advected heat [W/m2]
